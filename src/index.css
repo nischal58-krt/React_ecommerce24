@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +9,17 @@
 
 @layer components{
     .container{
-        @apply 
+        @apply mx-auto max-w-[1170px]
     }
+    .leadinng auto{
+        @apply leading-normal
+    }
+    /*using arbitary values; line-height-normal equivalent of figma line-height:auto  */
 }
+/* 
+    #logo:hover{
+        transform: translate(10px ,-10px);
+        text-decoration: underline;
+        transition-property: all;
+        transition-duration: .5s;} 
+*/
