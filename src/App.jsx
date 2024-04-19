@@ -1,5 +1,5 @@
 import React from 'react'
-import RootElement from "./components/RootElement";
+import RootElement from "./components/home/RootElement";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import {

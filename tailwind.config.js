@@ -22,6 +22,15 @@ export default {
     },
 
   },
-  plugins: [],
+  screens: {
+    /* we should start with mobile. */
+    sm: "576px", // mobile landscape mode
+    md: "768px", // tablet
+    lg: "1024px", // latptop without side numerical in keypad
+    xl: "1200px", // normal desktop
+    xxl: "1400", // huge monitor
+    xl: "1280px", // normal desktop
+    xxl: "1400px", // huge monitor
+  },
 }
 }
