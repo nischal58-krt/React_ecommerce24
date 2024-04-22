@@ -29,8 +29,13 @@ export default {
     lg: "1024px", // latptop without side numerical in keypad
     xl: "1200px", // normal desktop
     xxl: "1400", // huge monitor
-    xl: "1280px", // normal desktop
+    xl: "1280px", // normal desk
     xxl: "1400px", // huge monitor
   },
+  backgroundImage:{
+    'banner-1':"url('/assests/banner1.png')",
+    'banner-2':"url('/assests/banner2.png')",
+    'banner-3':"url('/assests/banner3.png')",
+  }
 }
 }

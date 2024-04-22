@@ -7,12 +7,13 @@ import { FaCartShopping } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { CiMenuBurger } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function toggleMenu(){
-    console.log("button clicked")
-    setIsMenuOpen(!isMenuOpen)
+  function toggleMenu() {
+    console.log("button clicked");
+    setIsMenuOpen(!isMenuOpen);
   }
   return (
     <>
@@ -28,7 +29,7 @@ function Header() {
                 <FaPhoneVolume className="inline-block  text-white" />
                 (12345)67890
               </a>
-              <p className="flex justify-center">
+              <p className="flex justify-center sm:flex">
                 English
                 <MdKeyboardArrowDown />
               </p>
@@ -38,12 +39,12 @@ function Header() {
                 <MdKeyboardArrowDown />{" "}
               </p>
             </div>
-            <div>
+            <div className="gap-2 sm:flex">
               <span>
                 <IoPerson className="inline-block" /> Login
               </span>
               <span>
-                Wishlist <MdOutlineFavoriteBorder className="inline-block" />{" "}
+                <MdOutlineFavoriteBorder className="inline-block" /> Wishlist{" "}
               </span>
               <span>
                 <FaCartShopping className="inline-block" /> Cart
@@ -53,7 +54,7 @@ function Header() {
         </div>
 
         <nav className="container justify-between  pb-[12px]  pt-[18px] sm:flex">
-          <div className="flex w-full lg:w-auto items-center  justify-between lg:gap-20">
+          <div className="flex w-full items-center justify-between  lg:w-auto lg:gap-20">
             <a
               id="logo"
               href=""
@@ -62,7 +63,14 @@ function Header() {
               Hekto
             </a>
 
-            <div className=" hidden md:flex md:gap-4 ">
+            <div
+              className={`${isMenuOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"} width-[50%] fixed bottom-0 right-0 top-0 flex 
+               flex-col bg-fuchsia-300 p-12 transition-all md:static md:w-auto md:flex-row md:gap-4 md:bg-transparent md:p-0 z-20`}
+            >
+              <button onClick={toggleMenu}>
+                <IoClose className=" flex justify-between text-3xl md:hidden " />{" "}
+              </button>
+
               <a className="text-secondary">Home</a>
               <a className="hover:text-secondary" href="">
                 Pages
@@ -79,32 +87,40 @@ function Header() {
               <a className="hover:text-secondary" href="">
                 Contact
               </a>
-            </div>
-            
-              {isMenuOpen && (
-            <>
-              <ul>
-                <li>home</li>
-                <li>static</li>
-              </ul>
-              <button onClick={toggleMenu}>close</button>
-            </>
-          )}
-            
-            <CiMenuBurger onClick={toggleMenu} className="flex text-3xl md:hidden " />
-          </div>
-
-          <form className=" hidden lg:flex">
-            <input
-              className=" border-primary-light px-2
+              <form className=" hidden lg:flex">
+                <input
+                  className=" border-primary-light px-2
               py-1
              focus:border-secondary focus:outline-none focus:transition-all"
-              type="text"
+                  type="text"
+                />
+                <button className=" bg-secondary px-3">
+                  <CiSearch className="text-white" />
+                </button>
+              </form>
+            </div>
+
+            {/* {isMenuOpen && (
+              <>
+                <ul>
+                  <li>home</li>
+                  <li>static</li> static code when clicked button to show side pop-up
+                </ul>
+                <button onClick={toggleMenu}>close</button>
+              </>
+            )} */}
+
+            <CiMenuBurger
+              onClick={toggleMenu}
+              className="flex text-4xl md:hidden "
             />
-            <button className=" bg-secondary px-3">
-              <CiSearch className="text-white" />
-            </button>
-          </form>
+            {isMenuOpen && (
+              <div
+                onClick={toggleMenu}
+                className="fixed bottom-0 left-0 right-0 top-0 z-10 bg-[rgba(231,100,205,0.5)]"
+              ></div>
+            )}
+          </div>
         </nav>
       </header>
     </>
