@@ -8,6 +8,7 @@ import {
     Route,
     Link,
   } from "react-router-dom";
+import Signup from './pages/Signup';
 
 function App() {
     const router = createBrowserRouter([
@@ -32,6 +33,7 @@ function App() {
         <div>
           <RouterProvider router={router} />
         </div>
+       
       </>
     );
 }

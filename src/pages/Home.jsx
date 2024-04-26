@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import Header from "../components/home/Header";
 import Banner from "../components/home/Banner";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import ProductPart from "../components/ProductPart";
+import Product from "../components/home/Product"
+import Signup from "./Signup";
+import LatestProducts from "./LatestProducts";
+
 
 function Home() {
   const  settings = {
@@ -12,7 +16,8 @@ function Home() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    arrows : false
   };
   let banners = [
     {
@@ -40,8 +45,10 @@ function Home() {
       redirectUrl: "/products",
     },
   ];
+  
   return (
     <>
+    
       <Header/>
        <Slider {...settings}>
         {
@@ -58,32 +65,10 @@ function Home() {
        {/* <Banner background={"bg-banner-1"}/>
        <Banner background={"bg-banner-2"}/>
        <Banner background={"bg-banner-3"}/> */}
-    </Slider>
-       <ProductPart/>
-   
-    
-     {/* <div id="box" className="bg-slate-500 sm:bg-purple-400 h-20 w-20 border  border-black mt-10" >
-      </div> */}
-      
-      {/* <p>CSS Positions</p>
-       <div className="box static">Static</div>
-      <div className="box relative inline-block left-3 bg-red-400">Relative</div>
-      <div className="box absolute bg-gray-800 bottom-3">Absolute</div>
-      <div className="box fixed  bg-amber-500 top-0 right-10">fix</div> */}
-
-      {/* <p className="font-josefin">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni fugiat,
-        officia, consequatur numquam repellendus fugit corrupti dolores,
-        obcaecati recusandae maiores rerum maxime eligendi accusantium esse
-        voluptatibus! Nesciunt dolorem unde odit.
-      </p>
-
-      <p className="font-sans">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        amet voluptate, hic corporis nesciunt suscipit incidunt at modi aliquam
-        illo.
-      </p> */}
-     
+       </Slider>
+       <Product/>
+       {/* <LatestProducts/> */}
+        {/* <Signup/> */}
     </>
   );
 }

@@ -64,8 +64,8 @@ function Header() {
             </a>
 
             <div
-              className={`${isMenuOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"} width-[50%] fixed bottom-0 right-0 top-0 flex 
-               flex-col bg-fuchsia-300 p-12 transition-all md:static md:w-auto md:flex-row md:gap-4 md:bg-transparent md:p-0 z-20`}
+              className={`${isMenuOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"} width-[50%] fixed bottom-0 right-0 top-0 z-20 
+               flex flex-col bg-fuchsia-300 p-12 transition-all md:static md:w-auto md:flex-row md:gap-4 md:bg-transparent md:p-0`}
             >
               <button onClick={toggleMenu}>
                 <IoClose className=" flex justify-between text-3xl md:hidden " />{" "}
@@ -87,11 +87,11 @@ function Header() {
               <a className="hover:text-secondary" href="">
                 Contact
               </a>
-              <form className=" hidden lg:flex">
+              <form className=" hidden lg:flex lg:gap-8">
                 <input
-                  className=" border-primary-light px-2
-              py-1
-             focus:border-secondary focus:outline-none focus:transition-all"
+                placeholder="search"
+                  className=" border-primary-light px-2 py-1
+                  focus:border-secondary focus:outline-none focus:transition-all"
                   type="text"
                 />
                 <button className=" bg-secondary px-3">
