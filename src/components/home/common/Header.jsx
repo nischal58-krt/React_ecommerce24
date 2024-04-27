@@ -8,6 +8,8 @@ import { CiSearch } from "react-icons/ci";
 import { CiMenuBurger } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,7 +43,7 @@ function Header() {
             </div>
             <div className="gap-2 sm:flex">
               <span>
-                <IoPerson className="inline-block" /> Login
+                 <Link to="/login"><IoPerson className="inline-block" /> Login </Link> 
               </span>
               <span>
                 <MdOutlineFavoriteBorder className="inline-block" /> Wishlist{" "}
@@ -55,13 +57,13 @@ function Header() {
 
         <nav className="container justify-between  pb-[12px]  pt-[18px] sm:flex">
           <div className="flex w-full items-center justify-between  lg:w-auto lg:gap-20">
-            <a
+            <Link
               id="logo"
-              href=""
+              to="/"
               className=" leading-auto inline-block font-josefin text-[34px] font-semibold text-primary-dark hover:text-secondary"
             >
               Hekto
-            </a>
+            </Link>
 
             <div
               className={`${isMenuOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"} width-[50%] fixed bottom-0 right-0 top-0 z-20 
@@ -71,13 +73,13 @@ function Header() {
                 <IoClose className=" flex justify-between text-3xl md:hidden " />{" "}
               </button>
 
-              <a className="text-secondary">Home</a>
-              <a className="hover:text-secondary" href="">
+              <Link to="/" className="text-secondary">Home</Link>
+              <Link className="hover:text-secondary" to="/pages">
                 Pages
-              </a>
-              <a className="hover:text-secondary" href="">
+              </Link>
+              <Link className="hover:text-secondary" to="/products">
                 Products
-              </a>
+              </Link>
               <a className="hover:text-secondary" href="">
                 Blog
               </a>

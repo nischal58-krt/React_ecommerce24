@@ -10,7 +10,7 @@ import chair2 from "/assests/chair-2.png";
 import chair3 from "/assests/chair-3.png";
 import chair4 from "/assests/chair-4.png";
 
-function Product() {
+function HomeProduct() {
   // let products = [
   //   {
   //     name:"Cantiever Chair1",
@@ -47,14 +47,14 @@ function Product() {
   // ]
 
   const [products, setProducts] = useState([]);
-  const [isloading, setIsloading] = useState(false);
+  const [isloading, setIsloading] = useState(true);
 
   useEffect(() => {
     let url = "https://ecommerce-sagartmg2.vercel.app/api/products/trending";
     axios.get(url).then((res) => {
       console.log(res);
       setProducts(res.data.data || []);
-      setIsloading[true]
+      setIsloading[false]
     });
   }, []);
 
@@ -65,6 +65,7 @@ function Product() {
           return (
             <FeatureProduct
               key={el._id}
+              _id = {el._id}
               name={el.name}
               price={el.price}
               image={el.image}
@@ -90,4 +91,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default HomeProduct;

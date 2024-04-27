@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
 
 function Login() {
   return (
     <>
-    <h1> Login </h1>
+      <div
+        className="container  border-primary-light px-2 py-1
+                  focus:border-secondary focus:outline-none focus:transition-all"
+      >
+        name
+        <input type="text" />
+        submit
+        <input type="text" />
+      </div>
     </>
-  )
+  );
 }
 
-export default Login
+export default Login;

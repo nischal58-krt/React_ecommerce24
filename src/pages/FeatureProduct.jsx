@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
 
-
+import { Link,useNavigate } from "react-router-dom";
 
 function FeatureProduct(props) {
+  const navigate = useNavigate();
+  console.log(props._id)
   return (
-    <div className=" group bg-primary-light pt-[32px] shadow-[0px_0px_25px_0px_rgba(0,0,0,0.5)] ">
+    <div  onClick={()=>{
+      navigate(`/products/${props._id}`)
+    }}
+    className=" hover:cursor-pointer group bg-primary-light pt-[32px] shadow-[0px_0px_25px_0px_rgba(0,0,0,0.5)] ">
 
       <div className=" absolute left-[11px] top-[11px] hidden h-[30px] w-[30px] items-center justify-center rounded-full
        border border-primary transition-all group-hover:flex">

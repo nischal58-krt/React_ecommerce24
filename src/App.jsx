@@ -1,5 +1,5 @@
 import React from 'react'
-import RootElement from "./components/home/RootElement";
+import RootElement from "./components/home/common/RootElement";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import {
@@ -9,6 +9,8 @@ import {
     Link,
   } from "react-router-dom";
 import Signup from './pages/Signup';
+import Products from './pages/products/Products';
+import Slug from './pages/products/Slug';
 
 function App() {
     const router = createBrowserRouter([
@@ -23,6 +25,20 @@ function App() {
           {
             path: "login",
             element: <Login/>,
+          },
+          {
+            path: "products",
+            children:[
+              {
+                path: "",
+                element: <Products />,
+              },
+              {
+                path: ":slug",
+                element: <Slug />,
+              },
+            ]
+    
           },
         ],
       },

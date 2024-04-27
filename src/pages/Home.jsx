@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Header from "../components/home/Header";
+import Header from "../components/home/common/Header";
 import Banner from "../components/home/Banner";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Product from "../components/home/Product"
+import Product from "../components/home/HomeProduct"
 import Signup from "./Signup";
 import LatestProducts from "./LatestProducts";
 
@@ -49,7 +49,7 @@ function Home() {
   return (
     <>
     
-      <Header/>
+      {/* <Header/> */}
        <Slider {...settings}>
         {
           banners.map((el)=>{
