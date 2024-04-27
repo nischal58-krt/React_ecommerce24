@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import Product from "../components/home/HomeProduct"
 import Signup from "./Signup";
 import LatestProducts from "./LatestProducts";
-
+import Footer from "../components/home/common/Footer";
 
 function Home() {
   const  settings = {
@@ -67,6 +67,7 @@ function Home() {
        <Banner background={"bg-banner-3"}/> */}
        </Slider>
        <Product/>
+       <Footer/>
        {/* <LatestProducts/> */}
         {/* <Signup/> */}
     </>
