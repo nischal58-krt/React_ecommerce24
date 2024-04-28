@@ -11,11 +11,17 @@
     .container{
         @apply mx-auto max-w-full  px-3  sm:max-w-[540px]  md:max-w-[720px]  lg:max-w-[960px] xl:max-w-[1170px];
     }
-    .leadinng auto{
+    .leading auto{
         @apply leading-normal
     }
     .btn{
-        @apply bg-secondary px-8 py-4 rounded-sm text-white
+        @apply bg-secondary hover:bg-[#971c50]  hover:px-8 py-4 rounded-sm text-white disabled:bg-gray-300 disabled:cursor-not-allowed
+    }
+    .form-group{
+        @apply mb-3
+    }
+    .form-control{
+        @apply border-gray-200 w-full rounded-[2px] border px-4 py-2 focus:shadow-md focus:outline-none focus:border-secondary
     }
     /*using arbitary values; line-height-normal equivalent of figma line-height:auto  */
 }

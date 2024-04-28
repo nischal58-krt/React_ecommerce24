@@ -1,6 +1,9 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import footerImg from "/assests/footer-img.png";
+import { FaRegEye } from "react-icons/fa";
 function Login() {
+  const [seePassword, setseePassword] = useState(false)
   return (
     <>
         {/* <div
@@ -45,16 +48,21 @@ function Login() {
             className="border p-2"
             placeholder="Email Address"
           />
-          <input type="text" className="border p-2" placeholder="Password" />
+          
+          <FaRegEye />
+          <input type={
+            seePassword
+            } className="border p-2" placeholder="Password" />
           <p className="text-xs text-[#9096B2]">Forgot your password?</p>
           <button className="w-full bg-secondary py-2 text-sm text-white">
-            Sign in
+            Login
           </button>
-          <p className="text-xs text-[#9096B2] hover:text-red-300">
-            Don't have an Account?Create account
-          </p>
+          <Link className="text-xs text-[#558cf3]" to="signup">
+            Don't have an Account?Create account?Sign Up 
+          </Link>
         </div>
       </div>
+            <img src={footerImg} className="container my-[40px]" />
     </>
   );
 }

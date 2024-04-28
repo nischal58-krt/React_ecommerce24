@@ -8,8 +8,8 @@ function RootElement() {
   return (
     <div>
       <Header/>
-      {/* <Footer/> */}
       <Outlet/>
+      <Footer/>
     </div>
   )
 }

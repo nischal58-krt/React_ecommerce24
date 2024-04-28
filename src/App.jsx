@@ -24,8 +24,18 @@ function App() {
           },
           {
             path: "login",
-            element: <Login/>,
+            children:[
+              {
+                path:"",
+                element: <Login/>,
+              },
+              {
+                path: "signup",
+                element: <Signup/>,
+              },
+            ]
           },
+         
           {
             path: "products",
             children:[
@@ -46,7 +56,7 @@ function App() {
   
     return (
       <>
-        <div>
+        <div className=''>
           <RouterProvider router={router} />
         </div>
        

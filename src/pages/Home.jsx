@@ -67,7 +67,7 @@ function Home() {
        <Banner background={"bg-banner-3"}/> */}
        </Slider>
        <Product/>
-       <Footer/>
+       {/* <Footer/> */}
        {/* <LatestProducts/> */}
         {/* <Signup/> */}
     </>
