@@ -13,6 +13,7 @@ export default function Signup() {
     // email:"required",
   })
   const navigate = useNavigate()
+  
   const [isloading, setisloading] = useState(false);
   function handleSubmit(e) {
     setisloading(true);
@@ -38,11 +39,16 @@ export default function Signup() {
         console.log(err.response.data.errors);
         toast.error("bad error");
 
-        let errObj = {} 
+        let errObj = {
+          // name:"custom error",
+          // email:"error"
+        } 
         err.response.data.errors.forEach((element)=>{
             errObj[element.param] = element.msg;
         });
+
         setformError(errObj)
+
       }else{
         toast.error("sorry something went wrong.Please try again later")
       }

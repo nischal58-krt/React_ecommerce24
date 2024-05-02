@@ -11,6 +11,7 @@ import {
 import Signup from './pages/Signup';
 import Products from './pages/products/Products';
 import Slug from './pages/products/Slug';
+import Cart from './pages/Cart';
 
 function App() {
     const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
             element: <Home/>,
           },
           {
+            path: "cart",
+            element: <Cart/>,
+          },
+          {
             path: "login",
             children:[
               {
@@ -33,6 +38,7 @@ function App() {
                 path: "signup",
                 element: <Signup/>,
               },
+              
             ]
           },
          

@@ -54,7 +54,7 @@ function HomeProduct() {
     axios.get(url).then((res) => {
       console.log(res);
       setProducts(res.data.data || []);
-      setIsloading[false]
+      setIsloading(false);
     });
   }, []);
 
@@ -65,14 +65,14 @@ function HomeProduct() {
           return (
             <FeatureProduct
               key={el._id}
-              _id = {el._id}
+              _id={el._id}
               name={el.name}
               price={el.price}
               image={el.image}
             />
           );
         })}
-      {isloading && (
+        {isloading && (
           <>
             <Skeleton className="h-[250px]" />
             <Skeleton className="h-[250px]" />
@@ -80,12 +80,12 @@ function HomeProduct() {
             <Skeleton className="h-[250px]" />
           </>
         )}
+
         {!isloading && products.length == 0 && (
           <>
             <p>no products found</p>
           </>
         )}
-
       </div>
     </>
   );

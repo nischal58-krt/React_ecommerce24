@@ -9,8 +9,13 @@ import { CiMenuBurger } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../redux/slice/userSlice";
 function Header() {
+  let user = useSelector((store) => store.user.value);
+  const cartItems = useSelector((store) => store.cart.value);
+  let dispatch = useDispatch();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
@@ -42,15 +47,32 @@ function Header() {
               </p>
             </div>
             <div className="gap-2 sm:flex">
-              <span>
-                 <Link to="/login"><IoPerson className="inline-block" /> Login </Link> 
-              </span>
+              {user ? (
+                <>
+                  {JSON.stringify(user?.name)}
+                  <span
+                    onClick={() => {
+                      dispatch(logout());
+                    }}
+                  >
+                    logout
+                  </span>
+                </>
+              ) : (
+                <span>
+                  <Link to="/login">
+                    <IoPerson className="inline-block" /> Login{" "}
+                  </Link>
+                </span>
+              )}
               <span>
                 <MdOutlineFavoriteBorder className="inline-block" /> Wishlist{" "}
               </span>
-              <span>
-                <FaCartShopping className="inline-block" /> Cart
-              </span>
+              <Link to="/cart">
+                Cart
+                <FaCartShopping className="inline-block" />
+                {JSON.stringify(cartItems)}
+              </Link>
             </div>
           </nav>
         </div>
@@ -73,7 +95,9 @@ function Header() {
                 <IoClose className=" flex justify-between text-3xl md:hidden " />{" "}
               </button>
 
-              <Link to="/" className="text-secondary">Home</Link>
+              <Link to="/" className="text-secondary">
+                Home
+              </Link>
               <Link className="hover:text-secondary" to="/pages">
                 Pages
               </Link>
@@ -91,7 +115,7 @@ function Header() {
               </a>
               <form className=" hidden lg:flex lg:gap-8">
                 <input
-                placeholder="search"
+                  placeholder="search"
                   className=" border-primary-light px-2 py-1
                   focus:border-secondary focus:outline-none focus:transition-all"
                   type="text"
