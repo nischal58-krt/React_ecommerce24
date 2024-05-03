@@ -69,9 +69,9 @@ function Header() {
                 <MdOutlineFavoriteBorder className="inline-block" /> Wishlist{" "}
               </span>
               <Link to="/cart">
-                Cart
+                Cart({cartItems.length})
                 <FaCartShopping className="inline-block" />
-                {JSON.stringify(cartItems)}
+              
               </Link>
             </div>
           </nav>

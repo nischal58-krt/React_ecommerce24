@@ -7,7 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 function FeatureProduct(props) {
   const navigate = useNavigate();
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
+
   console.log(props._id);
   return (
     <div
@@ -16,12 +17,21 @@ function FeatureProduct(props) {
       }}
       className=" group bg-primary-light pt-[32px] shadow-[0px_0px_25px_0px_rgba(0,0,0,0.5)] hover:cursor-pointer "
     >
-      <div
+      {/* <div onClick={(e)=>{
+          e.stopPropagation()
+          alert("")
+      }}
         className="absolute left-[11px] top-[11px]  h-[30px] w-[30px] items-center justify-center rounded-full
-       border border-primary transition-all group-hover:flex"
+         border border-primary transition-all group-hover:flex"
       >
         <FaCartPlus className="text-primary hover:" />
-      </div>
+      </div> */}
+          
+          <button onClick={(e)=>{
+          e.stopPropagation()
+         dispatch(addItem(props.name))
+      }} className="rounded-full border bg-primary ">addItems
+      </button>
 
       <img
         src={props.image}
@@ -37,6 +47,7 @@ function FeatureProduct(props) {
         <p className="group-hover:font-josefin  group-hover:text-[#151875]">
           ${props.price}
         </p>
+         
       </div>
     </div>
   );
