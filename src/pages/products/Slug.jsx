@@ -2,23 +2,51 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import bag23 from '/assests/bag-23.png'
-import 
-
-{ MdFavoriteBorder } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
+import { addItem } from '../../redux/slice/cartSlice';
+import { useDispatch } from 'react-redux';
 
 function Slug() {
 
   const [product, setProduct] = useState({})
 
   const params = useParams
+  const dispatch = useDispatch()
 
 useEffect(()=>{
   axios.get(`https://ecommerce-sagartmg2.vercel.app/api/products/${params.slug}`)
+  .then(()=>{
+      setProduct(res.data.data)
+  })
 },[])
-
   return (
+    
     <>
-    <div className="bg-[#F6F5FF]">
+    {/* {JSON.stringify(product)} */}
+     
+      <div className="container">
+        {/* {JSON.stringify(product)} */}
+        <p className="text-4xl">{product.name}</p>
+      
+        <br />
+        <br />
+        <button
+          className="btn"
+          onClick={() => {
+            dispatch(addItem(product));
+          }}
+        >
+          add to cart
+        </button>
+      </div>
+    </>
+  )
+}
+
+export default Slug
+
+
+{/* <div className="bg-[#F6F5FF]">
         <div className="mx-auto max-w-[210px] py-10">
           <p className="text-[20px] font-bold md:text-[36px]">My Account</p>
           <div className="flex flex-wrap gap-2 text-xs md:text-base">
@@ -45,9 +73,4 @@ useEffect(()=>{
           <MdFavoriteBorder />
         </ul>
 
-      </div>
-    </>
-  )
-}
-
-export default Slug
+      </div> */}

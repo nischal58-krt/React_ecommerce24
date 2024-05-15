@@ -68,7 +68,7 @@ function Home() {
        </Slider>
        <Product/>
        {/* <Footer/> */}
-       {/* <LatestProducts/> */}
+       <LatestProducts/>
         {/* <Signup/> */}
     </>
   );

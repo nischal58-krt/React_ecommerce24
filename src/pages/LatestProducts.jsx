@@ -7,7 +7,6 @@ export default function LatestProducts() {
         {
             title:"Comfort Handy Craft",
             price:"$123",
-            image:sofa1,
         }
     ]
   return (
@@ -25,13 +24,10 @@ export default function LatestProducts() {
     {
         latest.map((el)=>{
                 return (
-                 el.image
+                 el.img
                 )
-                
+            
         })
-    }
-    {
-        
     }
     </div>
 

@@ -14,7 +14,7 @@ function Login() {
   const [seePassword, setseePassword] = useState(false)
   const [formError, setformError] = useState({ })
   const [formData, setformData] = useState({
-    email:"b@b.com",
+    email:"s@s.com",
     password:"password",
   })
   
@@ -40,6 +40,7 @@ function Login() {
         // navigate('/login')
         console.log("success")
         dispatch(setReduxUser(res.data.user)) // change redux value
+        localStorage.setItem("token",res.data.access_token)
       })
       .catch((err) => {
       if(err.response?.status === 400){

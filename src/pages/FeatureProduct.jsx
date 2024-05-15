@@ -29,7 +29,7 @@ function FeatureProduct(props) {
           
           <button onClick={(e)=>{
           e.stopPropagation()
-         dispatch(addItem(props.name))
+         dispatch(addItem(props))
       }} className="rounded-full border bg-primary ">addItems
       </button>
 

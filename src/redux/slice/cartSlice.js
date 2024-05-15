@@ -5,11 +5,28 @@ export const cartSlice = createSlice({
   initialState: {
     value:[]
     // value: ["one","two"]
+    // value:[{
+    //   _id:"3231",
+    //   name:"watch",
+    //   price:"$34",
+    //   quantity:"3",
+    // }]
+
   },
   reducers: {
     addItem:(state,action)=>{
+      let product = action.payload;
+      let {name,_id,price,image} = product;
         // state.value = ["one", "two", "three"]
-        state.value.push(action.payload)
+        state.value.push({
+          quantity: 1,
+          name,
+          _id,
+          price,
+          image,
+        }
+        )
+        
     },
     resetCart:(state,action)=>{
         state.value = []

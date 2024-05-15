@@ -104,6 +104,13 @@ function Header() {
               <Link className="hover:text-secondary" to="/products">
                 Products
               </Link>
+              <Link className="hover:text-secondary" to="/sellers/products">
+                Seller-Products
+              </Link>
+              <Link className="hover:text-secondary" to="/sellers/products/add">
+                Add-Products
+              </Link>
+
               <a className="hover:text-secondary" href="">
                 Blog
               </a>
