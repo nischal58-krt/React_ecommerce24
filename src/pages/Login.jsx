@@ -7,6 +7,7 @@ import FormErrorMessage from "../components/home/common/FormErrorMessage";
 import { setReduxUser } from "../redux/slice/userSlice";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import BreadCrum from "../components/home/common/BreadCrum";
 
 function Login() {
   const dispatch = useDispatch(); //we can only call redux function via this  
@@ -80,22 +81,7 @@ function Login() {
     >
     </div> */}
 
-        <div className="bg-[#F6F5FF]">
-        <div className="mx-auto max-w-[210px] py-10">
-          <p className="text-[20px] font-bold md:text-[36px]">My Account</p>
-          <div className="flex flex-wrap gap-2 text-xs md:text-base">
-            <a href="" className=" hover:text-secondary">
-              Home
-            </a>
-            <a href="" className=" hover:text-secondary">
-              Pages
-            </a>
-            <a href="" className=" hover:text-secondary">
-              My Account
-            </a>
-          </div>
-        </div>
-      </div>
+        <BreadCrum title='Login'/>
 
       <form className="" onSubmit={handleSubmit} >
       <div className="mx-auto mt-[67px] flex w-[302px] items-center justify-center p-[28px] shadow-lg md:w-[544px]">

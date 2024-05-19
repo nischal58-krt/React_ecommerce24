@@ -44,7 +44,7 @@ function FeatureProduct(props) {
           {" "}
           Code Y5-3401
         </p>
-        <p className="group-hover:font-josefin  group-hover:text-[#151875]">
+        <p className="group-hover:font-josefin group-hover:text-[#151875]">
           ${props.price}
         </p>
          

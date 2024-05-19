@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FormErrorMessage from "../components/home/common/FormErrorMessage";
 import { useNavigate } from "react-router-dom";
+import BreadCrum from "../components/home/common/BreadCrum";
 export default function Signup() {
   const [formError, setformError] = useState({
     // name:"required",
@@ -58,7 +59,7 @@ export default function Signup() {
 
   return (
     <>
-      {/* <BreadCrumb /> */}
+      <BreadCrum title="Signup" />
       <div className="mx-auto mt-[67px] flex w-[302px] items-center justify-center p-[28px] shadow-lg md:w-[544px]">
         <div className="font-lato space-y-2 p-[24px]  ">
           <div>
