@@ -11,6 +11,7 @@ import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/slice/userSlice";
+import { SELLER } from "../../../constants/role";
 function Header() {
   let user = useSelector((store) => store.user.value);
   const cartItems = useSelector((store) => store.cart.value);
@@ -104,12 +105,17 @@ function Header() {
               <Link className="hover:text-secondary" to="/products">
                 Products
               </Link>
+              {
+              user && user.role == SELLER && (
+                  <>
               <Link className="hover:text-secondary" to="/sellers/products">
                 Seller-Products
               </Link>
               <Link className="hover:text-secondary" to="/sellers/products/add">
                 Add-Products
               </Link>
+                  </>
+                )}
 
               <a className="hover:text-secondary" href="">
                 Blog

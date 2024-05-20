@@ -13,7 +13,7 @@ function BreadCrum(props) {
               Pages
             </a>
             <a href="" className=" hover:text-secondary">
-              My Account
+              {props.heading}
             </a>
           </div>
         </div>

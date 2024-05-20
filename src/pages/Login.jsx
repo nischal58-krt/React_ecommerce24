@@ -15,7 +15,7 @@ function Login() {
   const [seePassword, setseePassword] = useState(false)
   const [formError, setformError] = useState({ })
   const [formData, setformData] = useState({
-    email:"s@s.com",
+    email:"b@b.com",
     password:"password",
   })
   

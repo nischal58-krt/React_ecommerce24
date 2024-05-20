@@ -17,6 +17,8 @@ import { useDispatch } from "react-redux";
 import { setReduxUser } from "./redux/slice/userSlice";
 import SellerProduct from "./pages/seller/SellerProduct";
 import AddProduct from "./pages/seller/AddProduct";
+import ProtectedRoute from "./components/home/ProtectedRoute";
+import SELLER from "./constants/role"
 function App() {
   const router = createBrowserRouter([
     {
@@ -29,10 +31,17 @@ function App() {
         },
         {
           path: "cart",
-          element: <Cart />,
+          // element: <ProtectedRoute  role={BUYER}/>,
+          children:[
+            {
+              path:"",
+              element: <Cart/>
+            }
+          ]
         },
         {
           path: "sellers",
+          element:<ProtectedRoute role={SELLER}/>,
           children: [
             {
               path: "products",
